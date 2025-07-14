@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { PopupModal } from "react-calendly";
 
@@ -20,9 +21,17 @@ export default function CalendlyPopup() {
     <>
       <button
         onClick={handleOpen}
-        className="z-50 flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-full shadow-2xl font-semibold text-base md:text-lg transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl"
+        className="group relative flex items-center justify-between gap-2 overflow-hidden rounded-full bg-gradient-to-r from-rose-500 to-rose-600 px-4 py-2 font-bold text-white shadow-xl transition-all duration-300 ease-in-out hover:from-rose-600 hover:to-rose-700"
       >
-        Book a call
+        <span className="z-10">Book a call</span>
+
+        {/* Animated white circle with arrow */}
+        <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-rose-600 transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-105">
+          <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+        </span>
+
+        {/* Ripple animation behind the white circle */}
+        <span className="absolute right-4 h-10 w-10 animate-ping rounded-full bg-rose-400 opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
       </button>
 
       <PopupModal
