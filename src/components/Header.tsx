@@ -1,68 +1,87 @@
 "use client";
 
-import { Menu } from "lucide-react";
-import { useState } from "react";
+import {
+  Navbar,
+  NavBody,
+  NavItems,
+  MobileNav,
+  NavbarButton,
+  MobileNavHeader,
+  MobileNavToggle,
+  MobileNavMenu,
+} from "@/components/ui/resizable-navbar";
 import Link from "next/link";
+import { useState } from "react";
 
-export default function Header() {
-  const [open, setOpen] = useState(false);
-
+export function Header() {
   const navItems = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Services", href: "#services" },
+    { name: "Home", link: "#home" },
+    { name: "About", link: "#about" },
+    { name: "Services", link: "#services" },
   ];
 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
-    <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm transition-all border-b border-gray-200">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo as text */}
-        <Link
-          href=""
-          className="text-2xl font-extrabold text-rose-600 tracking-tight hover:opacity-90 transition"
-        >
-          Holistically
-        </Link>
-
+    <div className="relative w-full">
+      <Navbar>
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6">
-          {navItems.map((item) => (
+        <NavBody>
+          <Link
+            href=""
+            className="text-2xl font-extrabold text-rose-600 tracking-tight hover:opacity-90 transition"
+          >
+            Holistically
+          </Link>
+          <NavItems items={navItems} />
+          <div className="flex items-center gap-4">
+            <NavbarButton variant="primary">Book a call</NavbarButton>
+          </div>
+        </NavBody>
+
+        {/* Mobile Navigation */}
+        <MobileNav>
+          <MobileNavHeader>
             <a
-              key={item.href}
-              href={item.href}
-              className="text-gray-800 hover:text-rose-600 font-medium transition-colors"
+              href="#"
+              className="text-2xl font-extrabold text-rose-600 tracking-tight hover:opacity-90 transition"
             >
-              {item.label}
+              Holistically
             </a>
-          ))}
-        </nav>
+            <MobileNavToggle
+              isOpen={isMobileMenuOpen}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            />
+          </MobileNavHeader>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden p-2 rounded-md hover:bg-gray-100 transition"
-          onClick={() => setOpen(!open)}
-        >
-          <Menu className="h-6 w-6 text-gray-800" />
-        </button>
-      </div>
-
-      {/* Mobile Dropdown Menu */}
-      {open && (
-        <div className="md:hidden bg-white border-t shadow-inner animate-in slide-in-from-top duration-300">
-          <div className="px-6 py-4 space-y-3">
-            {navItems.map((item) => (
+          <MobileNavMenu
+            isOpen={isMobileMenuOpen}
+            onClose={() => setIsMobileMenuOpen(false)}
+          >
+            {navItems.map((item, idx) => (
               <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="block text-gray-800 hover:text-rose-600 font-medium transition-colors"
+                key={`mobile-link-${idx}`}
+                href={item.link}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="relative text-neutral-600 dark:text-neutral-300"
               >
-                {item.label}
+                <span className="block font-medium">{item.name}</span>
               </a>
             ))}
-          </div>
-        </div>
-      )}
-    </header>
+            <div className="flex w-full flex-col gap-4">
+              <NavbarButton
+                onClick={() => setIsMobileMenuOpen(false)}
+                variant="primary"
+                className="w-full"
+              >
+                Book a call
+              </NavbarButton>
+            </div>
+          </MobileNavMenu>
+        </MobileNav>
+      </Navbar>
+    </div>
   );
 }
+
+export default Header;

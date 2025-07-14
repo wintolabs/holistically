@@ -415,6 +415,18 @@
   dependencies:
     tslib "^2.8.0"
 
+"@tabler/icons-react@^3.34.0":
+  version "3.34.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons-react/-/icons-react-3.34.0.tgz#8503c25ba9e50ff02a49a1f9c62ceecfd27fa3ab"
+  integrity sha512-OpEIR2iZsIXECtAIMbn1zfKfQ3zKJjXyIZlkgOGUL9UkMCFycEiF2Y8AVfEQsyre/3FnBdlWJvGr0NU47n2TbQ==
+  dependencies:
+    "@tabler/icons" "3.34.0"
+
+"@tabler/icons@3.34.0":
+  version "3.34.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-3.34.0.tgz#b11734dc76686abe969b68c2f33e565b116b70fb"
+  integrity sha512-jtVqv0JC1WU2TTEBN32D9+R6mc1iEBuPwLnBsWaR02SIEciu9aq5806AWkCHuObhQ4ERhhXErLEK7Fs+tEZxiA==
+
 "@tailwindcss/node@4.1.11":
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/@tailwindcss/node/-/node-4.1.11.tgz#d626af65fc9872e5e9d8884791d7e3856e945359"
@@ -1644,6 +1656,15 @@ fraction.js@^4.3.7:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.3.7.tgz#06ca0085157e42fda7f9e726e79fefc4068840f7"
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
 
+framer-motion@^12.23.5:
+  version "12.23.5"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-12.23.5.tgz#f9bd014d3bbce42ea5a2f2f918328295857fada4"
+  integrity sha512-t+6/f2TUowkr1gVuGwVwxR3ZQupCdCZj0mivG8M8CW2kwHPqtSePomECvmto15qoFCwost77O/XuEsq59MLDKw==
+  dependencies:
+    motion-dom "^12.23.5"
+    motion-utils "^12.23.2"
+    tslib "^2.4.0"
+
 function-bind@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.2.tgz#2c02d864d97f3ea6c8830c464cbd11ab6eab7a1c"
@@ -2268,6 +2289,26 @@ mkdirp@^3.0.1:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-3.0.1.tgz#e44e4c5607fb279c168241713cc6e0fea9adcb50"
   integrity sha512-+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==
 
+motion-dom@^12.23.5:
+  version "12.23.5"
+  resolved "https://registry.yarnpkg.com/motion-dom/-/motion-dom-12.23.5.tgz#1ca561f24fdd1542d2763a6899b0b04006b3be66"
+  integrity sha512-RrUS4X11w7kIU1COoSVptuYTx1QQ/sViDEI1Yl1zL0nem8UXn3HRcsMrFTCkZSSRLXeVpN540bFP1iS87SicPQ==
+  dependencies:
+    motion-utils "^12.23.2"
+
+motion-utils@^12.23.2:
+  version "12.23.2"
+  resolved "https://registry.yarnpkg.com/motion-utils/-/motion-utils-12.23.2.tgz#93e13c5abd611bf270fa3da5e962a72f80158d2d"
+  integrity sha512-cIEXlBlXAOUyiAtR0S+QPQUM9L3Diz23Bo+zM420NvSd/oPQJwg6U+rT+WRTpp0rizMsBGQOsAwhWIfglUcZfA==
+
+motion@^12.23.5:
+  version "12.23.5"
+  resolved "https://registry.yarnpkg.com/motion/-/motion-12.23.5.tgz#d6b645ec43d3c03658bd1f558a356edf3b9d5dc7"
+  integrity sha512-FpabXbpG816YVOIoOpd0BNOCmOXOLwHMbX4Am4OpDs7VqbAfQvejM+CnTA6TuMKLdmX7h1FxG7bXaDGQiceHCg==
+  dependencies:
+    framer-motion "^12.23.5"
+    tslib "^2.4.0"
+
 ms@^2.1.1, ms@^2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
@@ -2510,6 +2551,11 @@ queue-microtask@^1.2.2:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
+
+react-calendly@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/react-calendly/-/react-calendly-4.4.0.tgz#ce4f09ca3232b61cdcdac7dc1b9b1ec4e7a0c3c2"
+  integrity sha512-kMd8fEby0plL5aCebhjq9aesOJ6YWcmR3Pjs3bufncykrp7b6TryaCnWGoq4xZc/oipyudAVCIRgPVUjUEr8nQ==
 
 react-dom@^19.0.0:
   version "19.1.0"

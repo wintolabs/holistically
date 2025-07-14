@@ -1,9 +1,9 @@
 // src/app/layout.tsx
-import "./globals.css";
+import CalendlyPopup from "@/components/CalendlyPopup";
+import Header from "@/components/Header";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Header from "@/components/Header";
-import FloatingBookingButton from "@/components/FloatingBookingButton";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,13 +27,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth h-full">
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans bg-background text-foreground antialiased transition-colors duration-300`}
+        id="__next"
       >
         <Header />
+
         <main className="pt-24">{children}</main>
-        <FloatingBookingButton />
+
+        <CalendlyPopup />
       </body>
     </html>
   );
