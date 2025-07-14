@@ -1,17 +1,17 @@
 "use client";
 
 import {
+  MobileNav,
+  MobileNavHeader,
+  MobileNavMenu,
+  MobileNavToggle,
   Navbar,
   NavBody,
   NavItems,
-  MobileNav,
-  NavbarButton,
-  MobileNavHeader,
-  MobileNavToggle,
-  MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import Link from "next/link";
 import { useState } from "react";
+import CalendlyPopup from "./CalendlyPopup";
 
 export function Header() {
   const navItems = [
@@ -35,7 +35,8 @@ export function Header() {
           </Link>
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="primary">Book a call</NavbarButton>
+            {/* <NavbarButton variant="primary">Book a call</NavbarButton> */}
+            <CalendlyPopup />
           </div>
         </NavBody>
 
@@ -68,15 +69,6 @@ export function Header() {
                 <span className="block font-medium">{item.name}</span>
               </a>
             ))}
-            <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Book a call
-              </NavbarButton>
-            </div>
           </MobileNavMenu>
         </MobileNav>
       </Navbar>

@@ -261,7 +261,7 @@ export const NavbarButton = ({
   | React.ComponentPropsWithoutRef<"button">
 )) => {
   const baseStyles =
-    "px-5 py-2 rounded-md text-sm font-semibold transition duration-200 ease-in-out transform hover:-translate-y-0.5 inline-block text-center";
+    "px-5 py-2 rounded-md text-md font-semibold transition duration-200 ease-in-out transform hover:-translate-y-0.5 inline-block text-center";
 
   const variantStyles = {
     primary: "bg-rose-600 text-white hover:bg-rose-700 hover:shadow-md",
