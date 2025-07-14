@@ -21,7 +21,7 @@ export default function CalendlyPopup() {
     <>
       <button
         onClick={handleOpen}
-        className="group relative flex items-center justify-between gap-2 overflow-hidden rounded-full bg-gradient-to-r from-rose-500 to-rose-600 px-4 py-2 font-bold text-white shadow-xl transition-all duration-300 ease-in-out hover:from-rose-600 hover:to-rose-700"
+        className="group relative flex items-center justify-between gap-2 overflow-hidden rounded-full bg-pink-500 px-4 py-2 font-bold text-white shadow-xl transition-all duration-300 ease-in-out hover:from-rose-600 hover:to-rose-700"
       >
         <span className="z-10">Book a call</span>
 

@@ -4,19 +4,19 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
         {/* Brand / Logo */}
         <div>
-          <h2 className="text-2xl font-semibold text-rose-600">Holistically</h2>
+          <h2 className="text-2xl font-semibold text-pink-500">Holistically</h2>
           <p className="text-sm mt-1">With Dr. Priyanka Sharma</p>
         </div>
 
         {/* Nav Links */}
         <nav className="flex gap-6 text-sm">
-          <a href="#home" className="hover:text-rose-600">
+          <a href="#home" className="hover:text-pink-500">
             Home
           </a>
-          <a href="#about" className="hover:text-rose-600">
+          <a href="#about" className="hover:text-pink-500">
             About
           </a>
-          <a href="#services" className="hover:text-rose-600">
+          <a href="#services" className="hover:text-pink-500">
             Services
           </a>
         </nav>

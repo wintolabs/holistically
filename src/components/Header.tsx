@@ -12,6 +12,7 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 import CalendlyPopup from "./CalendlyPopup";
+import Image from "next/image";
 
 export function Header() {
   const navItems = [
@@ -27,12 +28,19 @@ export function Header() {
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
-          <Link
-            href=""
-            className="text-2xl font-extrabold text-rose-600 tracking-tight hover:opacity-90 transition"
-          >
-            Holistically
+          <Link href="/" replace>
+            <div className="relative w-[60px] h-[60px] cursor-pointer z-[70]">
+              <Image
+                src="/holistic-logo.png"
+                alt="Holistically Logo"
+                fill
+                sizes="60px"
+                className="object-contain"
+                priority
+              />
+            </div>
           </Link>
+
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
             {/* <NavbarButton variant="primary">Book a call</NavbarButton> */}
@@ -43,12 +51,18 @@ export function Header() {
         {/* Mobile Navigation */}
         <MobileNav>
           <MobileNavHeader>
-            <a
-              href="#"
-              className="text-2xl font-extrabold text-rose-600 tracking-tight hover:opacity-90 transition"
-            >
-              Holistically
-            </a>
+            <Link href="/" replace>
+              <div className="relative w-[50px] h-[50px] cursor-pointer z-[60]">
+                <Image
+                  src="/holistic-logo.png"
+                  alt="Holistically Logo"
+                  fill
+                  sizes="50px"
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </Link>
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

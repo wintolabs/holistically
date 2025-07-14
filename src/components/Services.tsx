@@ -2,22 +2,22 @@ import { HeartPulse, Leaf, Stethoscope, Syringe } from "lucide-react";
 
 const services = [
   {
-    icon: <Stethoscope className="w-6 h-6 text-rose-600" />,
+    icon: <Stethoscope className="w-6 h-6 text-pink-500" />,
     title: "General Health Checkups",
     desc: "Routine exams and medical consultations for all age groups.",
   },
   {
-    icon: <Leaf className="w-6 h-6 text-rose-600" />,
+    icon: <Leaf className="w-6 h-6 text-pink-500" />,
     title: "Holistic Wellness Plans",
     desc: "Personalized lifestyle, diet, and mindfulness plans.",
   },
   {
-    icon: <HeartPulse className="w-6 h-6 text-rose-600" />,
+    icon: <HeartPulse className="w-6 h-6 text-pink-500" />,
     title: "Stress & Anxiety Relief",
     desc: "Integrated therapies to help manage mental health.",
   },
   {
-    icon: <Syringe className="w-6 h-6 text-rose-600" />,
+    icon: <Syringe className="w-6 h-6 text-pink-500" />,
     title: "Immunization & Preventive Care",
     desc: "Vaccinations and preventive screenings.",
   },
