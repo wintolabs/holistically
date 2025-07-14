@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: "Permissions-Policy",
-            value: "payment=*, fullscreen=(self), geolocation=*",
+            value: "payment=*",
           },
         ],
       },
