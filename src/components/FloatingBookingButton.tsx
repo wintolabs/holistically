@@ -2,33 +2,24 @@
 
 import { useEffect, useState } from "react";
 import { CalendarIcon } from "lucide-react";
+import { loadCalendly } from "@/utils/loadCalendly";
 
 export default function FloatingBookingButton() {
-  const [calendlyReady, setCalendlyReady] = useState(false);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    const existingScript = document.querySelector(
-      'script[src="https://assets.calendly.com/assets/external/widget.js"]'
-    );
-
-    if (!existingScript) {
-      const script = document.createElement("script");
-      script.src = "https://assets.calendly.com/assets/external/widget.js";
-      script.async = true;
-      script.onload = () => setCalendlyReady(true); // ✅ Wait for Calendly script to load
-      document.body.appendChild(script);
-    } else {
-      setCalendlyReady(true); // Already loaded
-    }
+    loadCalendly().then(() => {
+      setReady(true);
+    });
   }, []);
 
   const handleClick = () => {
-    if (calendlyReady && window.Calendly) {
+    if (ready && window.Calendly) {
       window.Calendly.initPopupWidget({
         url: "https://calendly.com/sharma-drpriyanka",
       });
     } else {
-      alert("Calendly is still loading. Please try again shortly.");
+      alert("Loading Calendly... Please wait a second and try again.");
     }
   };
 

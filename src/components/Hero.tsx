@@ -1,15 +1,18 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { loadCalendly } from "@/utils/loadCalendly";
 
 export default function Hero() {
-  const handleBooking = () => {
-    if (window.Calendly) {
-      window.Calendly.initPopupWidget({
+  const handleBooking = async () => {
+    try {
+      await loadCalendly();
+      window.Calendly?.initPopupWidget({
         url: "https://calendly.com/sharma-drpriyanka",
       });
-    } else {
-      alert("Calendly is still loading. Please try again in a moment.");
+    } catch (err) {
+      alert("Failed to load Calendly. Please try again.");
+      console.error(err);
     }
   };
 
@@ -27,9 +30,10 @@ export default function Hero() {
           modern medicine and holistic healing to support your mind, body, and
           soul.
         </p>
+
         <Button
-          className="bg-rose-600 hover:bg-rose-700 text-white text-lg px-6 py-5 rounded-xl"
           onClick={handleBooking}
+          className="bg-rose-600 hover:bg-rose-700 text-white text-lg px-6 py-5 rounded-xl"
         >
           Book Appointment
         </Button>

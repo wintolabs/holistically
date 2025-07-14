@@ -11,6 +11,7 @@ export default function About() {
             alt="Dr. Priyanka Sharma"
             fill
             className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
 
