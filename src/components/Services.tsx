@@ -1,51 +1,79 @@
-import { HeartPulse, Leaf, Stethoscope, Syringe } from "lucide-react";
+"use client";
+
+import {
+  Stethoscope,
+  Brain,
+  Venus,
+  Droplet,
+  Baby,
+  ShieldCheck,
+} from "lucide-react";
 
 const services = [
   {
-    icon: <Stethoscope className="w-6 h-6 text-pink-500" />,
-    title: "General Health Checkups",
-    desc: "Routine exams and medical consultations for all age groups.",
+    icon: Stethoscope,
+    title: "Homeopathic Consultations",
+    desc: "Individualised remedies for acute & chronic ailments across all ages.",
   },
   {
-    icon: <Leaf className="w-6 h-6 text-pink-500" />,
-    title: "Holistic Wellness Plans",
-    desc: "Personalized lifestyle, diet, and mindfulness plans.",
+    icon: Brain,
+    title: "Emotional & Mental Wellness",
+    desc: "Gentle, non-suppressive care for anxiety, mood swings, and sleep issues.",
   },
   {
-    icon: <HeartPulse className="w-6 h-6 text-pink-500" />,
-    title: "Stress & Anxiety Relief",
-    desc: "Integrated therapies to help manage mental health.",
+    icon: Venus,
+    title: "Women’s & Hormonal Health",
+    desc: "Support for PCOS, thyroid, fertility and menopause—naturally balanced.",
   },
   {
-    icon: <Syringe className="w-6 h-6 text-pink-500" />,
-    title: "Immunization & Preventive Care",
-    desc: "Vaccinations and preventive screenings.",
+    icon: Droplet,
+    title: "Skin & Hair Disorders",
+    desc: "Long-lasting relief for acne, eczema, psoriasis, alopecia and more.",
+  },
+  {
+    icon: Baby,
+    title: "Child & Adolescent Care",
+    desc: "Safe remedies for allergies, immunity, behaviour and growth milestones.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Gut & Immunity Support",
+    desc: "Strengthen digestion and resilience with tailored homeopathic plans.",
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="bg-[#fef6f0] py-24 px-4 md:px-8">
-      <div className="max-w-6xl mx-auto text-center space-y-12">
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900">Services Offered</h2>
-          <p className="text-gray-700 max-w-2xl mx-auto mt-2">
-            Comprehensive care tailored to your needs — blending science with
-            holistic healing.
+    <section
+      id="services"
+      className="bg-gradient-to-br from-[#d3f0f4] via-white to-[#fbe5ee] py-24 px-4 md:px-8"
+    >
+      <div className="mx-auto max-w-6xl text-center space-y-12">
+        {/* Heading */}
+        <div className="space-y-2">
+          <h2 className="text-3xl font-extrabold text-gray-900">
+            Services Offered
+          </h2>
+          <p className="text-gray-700 max-w-2xl mx-auto">
+            Root-cause healing through compassionate, personalised homeopathy.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-left space-y-3 hover:shadow-md transition"
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {services.map(({ icon: Icon, title, desc }) => (
+            <article
+              key={title}
+              className="flex flex-col items-center text-center space-y-4 rounded-xl bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
-              <div>{service.icon}</div>
-              <h3 className="text-lg font-semibold text-gray-900">
-                {service.title}
-              </h3>
-              <p className="text-sm text-gray-600">{service.desc}</p>
-            </div>
+              {/* Icon wrapper */}
+              <div className="grid h-16 w-16 place-content-center rounded-full bg-gradient-to-br from-sky-50 to-sky-100 ring-4 ring-sky-200/50">
+                <Icon className="h-8 w-8 text-sky-600" strokeWidth={2} />
+              </div>
+
+              <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">{desc}</p>
+            </article>
           ))}
         </div>
       </div>

@@ -21,17 +21,17 @@ export default function CalendlyPopup() {
     <>
       <button
         onClick={handleOpen}
-        className="group relative flex items-center justify-between gap-2 overflow-hidden rounded-full bg-pink-500 px-4 py-2 font-bold text-white shadow-xl transition-all duration-300 ease-in-out hover:from-rose-600 hover:to-rose-700"
+        className="group relative flex items-center justify-between gap-2 overflow-hidden rounded-full bg-pink-500 px-4 py-2 font-bold text-white shadow-xl transition-all duration-300 ease-in-out hover:from-pink-600 hover:to-pink-700"
       >
         <span className="z-10">Book a call</span>
 
         {/* Animated white circle with arrow */}
-        <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-rose-600 transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-105">
+        <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-pink-500 transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-105">
           <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
         </span>
 
         {/* Ripple animation behind the white circle */}
-        <span className="absolute right-4 h-10 w-10 animate-ping rounded-full bg-rose-400 opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
+        <span className="absolute right-4 h-10 w-10 animate-ping rounded-full bg-pink-400 opacity-30 group-hover:opacity-50 transition-opacity duration-300" />
       </button>
 
       <PopupModal

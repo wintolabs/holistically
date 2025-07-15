@@ -1,40 +1,56 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-r from-gray-800 to-gray-400 "
+      className="relative isolate flex items-center justify-center overflow-hidden min-h-[90vh]"
     >
-      {/* Background Image */}
+      {/* Background photo */}
       <Image
-        src="/hero.jpeg"
-        alt="Hero Section"
-        fill
-        className="absolute object-cover object-center opacity-60 "
+        src="/hero.jpeg" // 1️⃣  your file
+        alt="Holistic wellness background"
+        fill // makes it cover the section
         priority
+        className="object-cover object-center"
+        sizes="100vw"
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50 z-0" />
+      {/* Vignette overlay */}
+      <div className="absolute inset-0 bg-black/50" />
 
-      {/* Content Grid */}
+      {/* 3️⃣  Fade-in container */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="relative z-10 mx-auto w-full max-w-3xl px-6 py-24 text-center space-y-6"
+      >
+        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+          Wellness through&nbsp;
+          <span className="text-pink-400">homeopathy</span>
+        </h1>
 
-      <div className="relative z-10 container mx-auto px-6 lg:px-12 py-24 flex flex-col lg:flex-row items-center justify-between gap-12">
-        {/* LEFT: Text Content */}
-        <div className="max-w-4xl text-center space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold text-white">
-            Welcome to <span className="text-pink-500">Holistically</span>
-          </h1>
-          <p className="text-lg text-white max-w-xl mx-auto">
-            Personalized care with <strong>Dr. Priyanka Sharma</strong> —
-            blending modern medicine and holistic healing to support your mind,
-            body, and soul.
-          </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <Link
+            href="#services"
+            className="inline-block rounded-md bg-cyan-600 px-6 py-3 text-white hover:text-cyan-600 font-medium shadow-md transition hover:bg-white"
+          >
+            Explore Services
+          </Link>
+
+          <Link
+            href="#about"
+            className="hidden sm:inline-block rounded-md bg-white/90 px-6 py-3 text-pink-600 hover:text-white font-medium shadow-md  backdrop-blur transition hover:bg-pink-600"
+          >
+            Why&nbsp;Holistically?
+          </Link>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

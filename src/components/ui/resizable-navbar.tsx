@@ -254,12 +254,12 @@ export const NavbarButton = ({
     "px-5 py-2 rounded-md text-md font-semibold transition duration-200 ease-in-out transform hover:-translate-y-0.5 inline-block text-center";
 
   const variantStyles = {
-    primary: "bg-rose-600 text-white hover:bg-rose-700 hover:shadow-md",
+    primary: "bg-pink-600 text-white hover:bg-pink-700 hover:shadow-md",
     secondary:
       "bg-transparent border border-gray-300 text-gray-800 hover:bg-gray-100 dark:text-white dark:border-neutral-700 dark:hover:bg-neutral-800",
     dark: "bg-black text-white hover:bg-gray-900 shadow-md",
     gradient:
-      "bg-gradient-to-r from-rose-500 to-red-500 text-white hover:from-rose-600 hover:to-red-600 shadow-md",
+      "bg-gradient-to-r from-pink-500 to-red-500 text-white hover:from-pink-600 hover:to-red-600 shadow-md",
   };
 
   return (
