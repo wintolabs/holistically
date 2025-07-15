@@ -32,8 +32,14 @@ export default function ImageCarousel({
 
   const by = (dir: "left" | "right") => {
     if (!ref.current) return;
-    const delta = dir === "left" ? -(cardWidth + gap) : cardWidth + gap;
-    ref.current.scrollBy({ left: delta, behavior: "smooth" });
+
+    const isMobile = window.innerWidth < 768;
+    const step = isMobile ? 240 : cardWidth + gap;
+
+    ref.current.scrollBy({
+      left: dir === "left" ? -step : step,
+      behavior: "smooth",
+    });
   };
 
   useEffect(check, []);
