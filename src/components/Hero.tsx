@@ -45,7 +45,7 @@ export default function Hero() {
 
           <Link
             href="#about"
-            className="hidden sm:inline-block rounded-md bg-white/90 px-6 py-3 text-pink-600 hover:text-white font-medium shadow-md  backdrop-blur transition hover:bg-pink-600"
+            className="hidden sm:inline-block rounded-md bg-white/90 px-6 py-3 text-pink-500 hover:text-white font-medium shadow-md  backdrop-blur transition hover:bg-pink-500"
           >
             Why&nbsp;Holistically?
           </Link>
