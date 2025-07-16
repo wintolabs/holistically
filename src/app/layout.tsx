@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,10 @@ export default function RootLayout({
       >
         <Header />
 
-        <main className="pt-24">{children}</main>
+        <main className="pt-24">
+          {children}
+          <Analytics />
+        </main>
         <div className="fixed bottom-6 right-6 block lg:hidden z-50">
           <CalendlyPopup />
         </div>
