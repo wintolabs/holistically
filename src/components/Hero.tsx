@@ -1,53 +1,57 @@
+// src/components/Hero.tsx
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative isolate flex items-center justify-center overflow-hidden min-h-[90vh]"
+      className="relative isolate flex min-h-[65vh] sm:min-h-[75vh] md:min-h-[85vh] items-center justify-start overflow-hidden"
     >
-      {/* Background photo */}
+      {/* Background image */}
       <Image
-        src="/hero.jpeg" // 1️⃣  your file
-        alt="Holistic wellness background"
-        fill // makes it cover the section
+        src="/hero.png"
+        alt="Holistically Homeopathic care"
+        fill
         priority
-        className="object-cover object-center"
         sizes="100vw"
+        className="object-cover object-[center]"
       />
 
-      {/* Vignette overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      {/* Adaptive vignette: keeps text readable */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/0 md:from-black/60 md:via-black/20" />
 
-      {/* 3️⃣  Fade-in container */}
+      {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative z-10 mx-auto w-full max-w-3xl px-6 py-24 text-center space-y-6"
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="relative z-10 max-w-3xl px-6 py-32 sm:px-8 md:px-16 text-left"
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
-          Wellness through&nbsp;
-          <span className="text-pink-400">homeopathy</span>
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white drop-shadow">
+          Wellness through <span className="text-pink-400">homeopathy</span>
         </h1>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+        <p className="mt-4 max-w-xl text-base sm:text-lg md:text-xl text-white/90">
+          Gentle, root-cause healing for allergies, skin issues, stress and more
+          — guided by Dr.&nbsp;Priyanka Sharma.
+        </p>
+
+        <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <Link
             href="#services"
-            className="inline-block rounded-md bg-cyan-600 px-6 py-3 text-white hover:text-cyan-600 font-medium shadow-md transition hover:bg-white"
+            className="inline-block rounded-md bg-cyan-600 px-8 py-3 text-center text-white font-medium shadow-md transition hover:bg-white hover:text-cyan-700"
           >
             Explore Services
           </Link>
-
           <Link
             href="#about"
-            className="hidden sm:inline-block rounded-md bg-white/90 px-6 py-3 text-pink-500 hover:text-white font-medium shadow-md  backdrop-blur transition hover:bg-pink-500"
+            className="inline-block rounded-md bg-white/90 px-8 py-3 text-center text-pink-600 font-medium shadow-md backdrop-blur transition hover:bg-pink-600 hover:text-white"
           >
-            Why&nbsp;Holistically?
+            Why Holistically?
           </Link>
         </div>
       </motion.div>
