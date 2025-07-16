@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { ShineBorder } from "@/components/magicui/shine-border";
 
 export default function About() {
   return (
@@ -9,6 +10,11 @@ export default function About() {
         {/* Portrait card */}
         <div className="relative max-w-xs md:max-w-sm lg:max-w-md mx-auto">
           <div className="rounded-xl bg-white shadow-xl ring-1 ring-gray-100 overflow-hidden">
+            <ShineBorder
+              shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+              borderWidth={2}
+            />
+
             <Image
               src="/dr-priyanka.jpeg"
               alt="Dr. Priyanka Sharma"

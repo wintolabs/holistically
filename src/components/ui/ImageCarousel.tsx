@@ -64,6 +64,8 @@ export default function ImageCarousel({
             transition={{ duration: 0.4, delay: i * 0.08 }}
             className={cn(
               "relative shrink-0 rounded-3xl overflow-hidden shadow-xl aspect-[2/3]",
+              "border-[1px]",
+              "border-pink-400",
               "w-[72vw] max-w-[240px]", // phones
               "sm:w-[300px] sm:max-w-none", // ≥ 640 px
               "md:w-96 md:max-w-none" // ≥ 768 px → 384 px wide
