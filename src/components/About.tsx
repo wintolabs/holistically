@@ -16,7 +16,7 @@ export default function About() {
             />
 
             <Image
-              src="/dr-priyanka1.png"
+              src="/dr-priyanka.jpg"
               alt="Dr. Priyanka Sharma"
               width={448}
               height={560}
