@@ -34,9 +34,10 @@ export default function About() {
               Meet Dr.&nbsp;Priyanka&nbsp;Sharma
             </h2>
             <p className="text-lg font-semibold text-pink-500">
-              BHMS (Gold Medalist) • PG&nbsp;Hom.&nbsp;(London)
-              <br className="hidden sm:block" />
-              Founder, The&nbsp;Holistic&nbsp;Clinic
+              • BHMS (Gold Medalist)
+              <br />
+              • PG&nbsp;Hom.&nbsp;(London)
+              <br />• Founder, The&nbsp;Holistic&nbsp;Clinic
             </p>
           </header>
 
