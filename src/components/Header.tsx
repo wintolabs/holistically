@@ -16,9 +16,10 @@ import Image from "next/image";
 
 export function Header() {
   const navItems = [
-    { name: "Home", link: "#home" },
-    { name: "About", link: "#about" },
-    { name: "Services", link: "#services" },
+    { name: "Home", link: "/#home" },
+    { name: "About", link: "/#about" },
+    { name: "Services", link: "/#services" },
+    { name: "Blogs", link: "/blogs" },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

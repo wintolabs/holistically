@@ -180,3 +180,25 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* blogs */
+
+.custom-blog-prose hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.custom-blog-prose p {
+  margin-bottom: 1.25rem;
+}
+
+.custom-blog-prose h2,
+.custom-blog-prose h3,
+.custom-blog-prose h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.custom-blog-prose ul {
+  margin-bottom: 1.25rem;
+}
