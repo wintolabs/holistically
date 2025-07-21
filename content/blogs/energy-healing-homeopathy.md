@@ -2,7 +2,7 @@
 title: "What Is Energy Healing? And How Homeopathy Is the Most Modern Way to Heal Your Mind, Body, and Soul"
 date: "21-07-2025"
 excerpt: "Discover how energy healing works and why homeopathy is a cutting-edge approach to restoring mind-body balance naturally."
-coverImage: "/images/blog/energy-healing.png"
+coverImage: "/images/blog/energy-healing-homeopathy.png"
 tags: ["energy", "homeopathy", "healing"]
 ---
 

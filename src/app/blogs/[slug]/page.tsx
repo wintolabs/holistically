@@ -6,7 +6,7 @@ import { BlogContent } from "@/components/BlogContent";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const blogs = await getAllBlogs();
-  return blogs.map((b) => ({ slug: b.slug }));
+  return blogs.map((blog) => ({ slug: blog.slug }));
 }
 
 export default async function BlogPost({
@@ -14,7 +14,7 @@ export default async function BlogPost({
 }: {
   params: { slug: string };
 }) {
-  const { slug } = await params;
+  const { slug } = params;
   const blog = await getBlogBySlug(slug);
 
   if (!blog) return notFound();
