@@ -91,7 +91,7 @@ export function VideoCard({
         src={src}
         playsInline
         muted={isMuted}
-        preload="metadata"
+        preload="auto"
         onEnded={() => {
           setIsPlaying(false);
         }}
