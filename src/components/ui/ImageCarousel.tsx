@@ -51,9 +51,9 @@ export default function ImageCarousel({
         onScroll={check}
         className="flex overflow-x-scroll scroll-smooth gap-4 pl-4 md:pl-6 pr-[12%] py-10 [scrollbar-width:none]"
       >
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-2 bg-gradient-to-r from-white/80 via-white/40 to-transparent dark:from-neutral-900/80 dark:via-neutral-900/40" />
+        {/* <div className="pointer-events-none absolute inset-y-0 left-0 z-30 w-2 bg-gradient-to-r from-white/80 via-white/40 to-transparent dark:from-neutral-900/80 dark:via-neutral-900/40" /> */}
 
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-30 w-2 bg-gradient-to-l from-white/80 via-white/40 to-transparent dark:from-neutral-900/80 dark:via-neutral-900/40" />
+        {/* <div className="pointer-events-none absolute inset-y-0 right-0 z-30 w-2 bg-gradient-to-l from-white/80 via-white/40 to-transparent dark:from-neutral-900/80 dark:via-neutral-900/40" /> */}
 
         {slides.map(({ src, alt }, i) => (
           <motion.div

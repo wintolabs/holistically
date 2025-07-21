@@ -19,14 +19,16 @@ const slides = [
 
 export default function PromoGallery() {
   return (
-    <section className="w-full py-16">
-      <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
-        <h2 className="mb-8 text-3xl md:text-5xl font-extrabold leading-tight">
-          Homeopathy&nbsp;
-          <span className="text-pink-500">That Works</span>
-        </h2>
+    <section className="bg-gradient-to-br from-[#d3f0f4] via-white to-[#fbe5ee]">
+      <div className="w-full py-16">
+        <div className="mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
+          <h2 className="mb-8 text-3xl md:text-5xl font-extrabold leading-tight">
+            Homeopathy&nbsp;
+            <span className="text-pink-500">That Works</span>
+          </h2>
 
-        <ImageCarousel slides={slides} />
+          <ImageCarousel slides={slides} />
+        </div>
       </div>
     </section>
   );
