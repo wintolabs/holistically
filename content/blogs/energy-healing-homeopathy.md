@@ -6,14 +6,6 @@ coverImage: "/images/blog/energy-healing-homeopathy.png"
 tags: ["energy", "homeopathy", "healing"]
 ---
 
-🌿 **What Is Energy Healing?**
-
-In today’s fast-paced world, many people are seeking not just relief from symptoms, but true healing—healing that addresses the root cause, the emotional baggage, and the energetic imbalances that modern life brings.
-
-This is where the concept of energy healing comes in.
-
----
-
 ✨ **What Is Energy Healing?**
 
 At the most basic level, everything in our universe is energy—including our bodies, thoughts, and emotions. Ancient systems like Ayurveda and Traditional Chinese Medicine understood this long ago. Now, even modern science recognizes that disturbances in our energy fields can affect our physical and emotional health.
@@ -63,9 +55,3 @@ We don’t believe in quick fixes. We believe in restoring your natural rhythm, 
 In the age of energy medicine, homeopathy is not outdated—it’s ahead of its time. It offers a bridge between science and soul, between your symptoms and your story.
 
 So if you’re feeling out of balance—emotionally, physically, or energetically—know that there’s a path to true healing.
-
----
-
-📞 **Book your consultation today**  
-🌐 www.holistically.in  
-🕘 10 AM–1 PM | 5 PM–8 PM
