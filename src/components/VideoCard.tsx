@@ -91,6 +91,7 @@ export function VideoCard({
         src={src}
         playsInline
         muted={isMuted}
+        preload="metadata"
         onEnded={() => {
           setIsPlaying(false);
         }}
@@ -102,7 +103,11 @@ export function VideoCard({
         onClick={handleToggle}
         className={clsx(
           "absolute inset-0 flex items-center justify-center transition duration-300 cursor-pointer",
-          "bg-black/20 opacity-0 group-hover:opacity-100"
+          "bg-black/20",
+          {
+            "opacity-100": !isPlaying,
+            "opacity-0 group-hover:opacity-100": isPlaying,
+          }
         )}
       >
         <div className="p-3 bg-white/30 rounded-full">
