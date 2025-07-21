@@ -6,6 +6,7 @@ import clsx from "clsx";
 
 interface VideoCardProps {
   src: string;
+  poster: string;
   index: number;
   activeIndex: number;
   setActiveIndex: (index: number) => void;
@@ -13,6 +14,7 @@ interface VideoCardProps {
 
 export function VideoCard({
   src,
+  poster,
   index,
   activeIndex,
   setActiveIndex,
@@ -89,6 +91,7 @@ export function VideoCard({
       <video
         ref={videoRef}
         src={src}
+        poster={poster}
         playsInline
         muted={isMuted}
         preload="auto"
