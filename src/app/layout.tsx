@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Holistically – Dr. Priyanka Sharma",
   description:
-    "A holistic health and wellness clinic led by Dr. Priyanka Sharma.",
+    "A holistic health and wellness clinic led by Dr. Priyanka Sharma",
 };
 
 export default function RootLayout({

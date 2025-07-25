@@ -15,6 +15,7 @@ const slides = [
   { src: "/promo/9.jpeg", alt: "Digestive care" },
   { src: "/promo/10.jpeg", alt: "PCOS support" },
   { src: "/promo/11.jpeg", alt: "Stress relief" },
+  { src: "/promo/12.jpeg", alt: "Is Homeopathy Scientific" },
 ];
 
 export default function PromoGallery() {

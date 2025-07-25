@@ -6,6 +6,7 @@ import { VideoCard } from "./VideoCard";
 const videos = [
   { src: "/videos/reel-1.mp4", poster: "/videos/posters/reel-1.png" },
   { src: "/videos/reel-2.mp4", poster: "/videos/posters/reel-2.png" },
+  { src: "/videos/reel-3.mp4", poster: "/videos/posters/reel-3.png" },
 ];
 
 export default function VideoCarousel() {

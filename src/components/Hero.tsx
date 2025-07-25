@@ -37,7 +37,7 @@ export default function Hero() {
 
         <p className="mt-4 max-w-xl text-base sm:text-lg md:text-xl text-white/90">
           Gentle, root-cause healing for allergies, skin issues, stress and more
-          — guided by Dr.&nbsp;Priyanka Sharma.
+          — guided by Dr.&nbsp;Priyanka Sharma
         </p>
 
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
