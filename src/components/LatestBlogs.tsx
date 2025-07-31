@@ -7,13 +7,19 @@ export async function LatestBlogs() {
   const latest = blogs.slice(0, 3); // Show top 3 blogs
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-br from-[#fbe5ee] via-white to-[#d3f0f4]">
+    <section className="py-8 px-4 bg-gradient-to-br from-[#fbe5ee] via-white to-[#d3f0f4]">
       <div className="py-16 px-4 max-w-6xl mx-auto" id="latest-blogs">
-        <h2 className="text-3xl font-bold mb-8 text-center">📚 Latest Blogs</h2>
-        <div className="grid gap-8 md:grid-cols-3">
+        <h2 className="text-3xl font-bold mb-12 text-center">
+          📚 Latest Blogs
+        </h2>
+        <div className="grid gap-8 md:grid-cols-3 auto-rows-fr">
           {latest.map((blog) => (
-            <Link key={blog.slug} href={`/blogs/${blog.slug}`}>
-              <div className="border rounded-lg overflow-hidden hover:shadow-lg transition bg-white dark:bg-neutral-900">
+            <Link
+              key={blog.slug}
+              href={`/blogs/${blog.slug}`}
+              className="h-full"
+            >
+              <div className="border rounded-lg overflow-hidden hover:shadow-lg transition bg-white dark:bg-neutral-900 h-full flex flex-col">
                 {blog.coverImage && (
                   <div className="relative w-full h-40">
                     <Image
@@ -26,7 +32,7 @@ export async function LatestBlogs() {
                     />
                   </div>
                 )}
-                <div className="p-4">
+                <div className="p-4 flex flex-col flex-grow">
                   <h3 className="text-lg font-semibold">{blog.title}</h3>
                   <p className="text-sm text-gray-500">
                     {blog.date} • {blog.readTime}

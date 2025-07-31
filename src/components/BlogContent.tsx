@@ -56,15 +56,17 @@ export function BlogContent({
         <h1 className="text-3xl font-bold mb-4">{title}</h1>
 
         {coverImage && (
-          <div className="relative w-full h-64 md:h-96 mb-6">
-            <Image
-              src={coverImage}
-              alt={title}
-              fill
-              className="object-cover rounded-lg"
-              sizes="100vw"
-              priority
-            />
+          <div className="w-full mb-6 flex justify-center">
+            <div className="w-full max-w-xl rounded-lg overflow-hidden">
+              <Image
+                src={coverImage}
+                alt={title}
+                width={1200}
+                height={675}
+                className="w-full h-auto rounded-lg object-contain"
+                priority
+              />
+            </div>
           </div>
         )}
 
