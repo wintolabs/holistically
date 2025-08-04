@@ -3,7 +3,7 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Footer from "@/components/Footer";
 import PromoGallery from "@/components/PromoGallery";
-import VideoCarousel from "@/components/VideoCarousel";
+import YoutubeVideoCarousel from "@/components/YoutubeVideoCarousel";
 import { LatestBlogs } from "@/components/LatestBlogs";
 
 export default async function Home() {
@@ -11,7 +11,7 @@ export default async function Home() {
     <>
       <Hero />
       <About />
-      <VideoCarousel />
+      <YoutubeVideoCarousel />
       <PromoGallery />
       <LatestBlogs />
       <Services />

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export async function LatestBlogs() {
   const blogs = await getAllBlogs();
-  const latest = blogs.slice(0, 3); // Show top 3 blogs
+  const latest = blogs.slice(0, 3);
 
   return (
     <section className="py-8 px-4 bg-gradient-to-br from-[#fbe5ee] via-white to-[#d3f0f4]">
@@ -12,6 +12,7 @@ export async function LatestBlogs() {
         <h2 className="text-3xl font-bold mb-12 text-center">
           📚 Latest Blogs
         </h2>
+
         <div className="grid gap-8 md:grid-cols-3 auto-rows-fr">
           {latest.map((blog) => (
             <Link
@@ -19,29 +20,32 @@ export async function LatestBlogs() {
               href={`/blogs/${blog.slug}`}
               className="h-full"
             >
-              <div className="border rounded-lg overflow-hidden hover:shadow-lg transition bg-white dark:bg-neutral-900 h-full flex flex-col">
-                {blog.coverImage && (
-                  <div className="relative w-full h-40">
+              <article className="border rounded-lg overflow-hidden hover:shadow-lg transition bg-white dark:bg-neutral-900 h-full flex flex-col">
+                <div className="relative w-full aspect-[4/3] max-h-56 bg-gray-50 overflow-hidden">
+                  {blog.coverImage && (
                     <Image
                       src={blog.coverImage}
                       alt={blog.title}
                       fill
-                      className="object-cover"
+                      className="object-cover object-center hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, 33vw"
                       priority
                     />
-                  </div>
-                )}
+                  )}
+                </div>
+
                 <div className="p-4 flex flex-col flex-grow">
-                  <h3 className="text-lg font-semibold">{blog.title}</h3>
-                  <p className="text-sm text-gray-500">
+                  <h3 className="text-lg font-semibold line-clamp-2">
+                    {blog.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 mt-1">
                     {blog.date} • {blog.readTime}
                   </p>
-                  <p className="text-sm text-gray-700 mt-2 line-clamp-2">
+                  <p className="text-sm text-gray-700 dark:text-gray-300 mt-2 line-clamp-3">
                     {blog.excerpt}
                   </p>
                 </div>
-              </div>
+              </article>
             </Link>
           ))}
         </div>
