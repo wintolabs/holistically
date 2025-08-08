@@ -14,7 +14,11 @@ const slides = [
   { src: "/promo/8.jpeg", alt: "Child care" },
   { src: "/promo/9.jpeg", alt: "Digestive care" },
   { src: "/promo/10.jpeg", alt: "PCOS support" },
-  { src: "/promo/11.jpeg", alt: "Stress relief" },
+  { src: "/promo/11.jpeg", alt: "Special Discount Children" },
+  { src: "/promo/12.jpeg", alt: "Central Retinal Vein Occlusion" },
+  { src: "/promo/13.jpeg", alt: "Struggling with Lichen Planus" },
+  { src: "/promo/14.jpeg", alt: "Bad body odour" },
+  { src: "/promo/15.jpeg", alt: "Child sleep" },
 ];
 
 export default function PromoGallery() {
