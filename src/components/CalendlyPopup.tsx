@@ -35,7 +35,7 @@ export default function CalendlyPopup() {
       </button>
 
       <PopupModal
-        url="https://calendly.com/sharma-drpriyanka"
+        url=" https://calendly.com/dr-priyanka-sharma"
         open={isOpen}
         onModalClose={handleClose}
         rootElement={rootElement}
