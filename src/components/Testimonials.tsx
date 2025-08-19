@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Stories from "react-insta-stories";
 import Image from "next/image"; // Add this import
+import { LoaderOne } from "./ui/loader";
 
 // Custom header component that matches Instagram design
 function CustomHeader({
@@ -109,24 +110,6 @@ function SplashScreen({ onStart }: { onStart: () => void }) {
   );
 }
 
-function SimpleLoader() {
-  return (
-    <div className="flex items-center justify-center h-full">
-      <div className="flex space-x-1">
-        <div className="w-2 h-2 bg-white/60 rounded-full animate-pulse"></div>
-        <div
-          className="w-2 h-2 bg-white/80 rounded-full animate-pulse"
-          style={{ animationDelay: "0.2s" }}
-        ></div>
-        <div
-          className="w-2 h-2 bg-white rounded-full animate-pulse"
-          style={{ animationDelay: "0.4s" }}
-        ></div>
-      </div>
-    </div>
-  );
-}
-
 const testimonials = [
   {
     url: "/testimonials/1.mp4",
@@ -219,7 +202,7 @@ export default function TestimonialsStories() {
                 keyboardNavigation={true}
                 width="100%"
                 height="100%"
-                loader={<SimpleLoader />}
+                loader={<LoaderOne />}
                 header={() => null} // Disable default header
                 storyContainerStyles={{
                   borderRadius: "20px",
