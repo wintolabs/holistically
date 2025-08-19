@@ -1,6 +1,11 @@
 "use client";
 
-import { IconBrandInstagram, IconBrandWhatsapp } from "@tabler/icons-react";
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandWhatsapp,
+  IconBrandYoutube,
+} from "@tabler/icons-react";
 // import { Mail, Phone } from "lucide-react";
 
 export default function Footer() {
@@ -38,14 +43,12 @@ export default function Footer() {
 
         {/* Social */}
         <div className="mx-auto md:mx-0">
-          <h3 className="text-sm font-semibold mb-3 text-center md:text-left">
-            Connect
-          </h3>
+          <h3 className="text-sm font-semibold mb-3 text-center">Connect</h3>
           <div className="flex justify-center md:justify-start gap-4">
             {/* Instagram */}
             <a
               aria-label="Instagram"
-              href="https://www.instagram.com/the__holistic_clinic"
+              href="https://www.instagram.com/holistically.thc"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full bg-white shadow hover:bg-pink-50 transition"
@@ -62,6 +65,28 @@ export default function Footer() {
               className="p-2 rounded-full bg-white shadow hover:bg-pink-50 transition"
             >
               <IconBrandWhatsapp className="h-5 w-5 text-pink-600" />
+            </a>
+
+            {/* Youtube */}
+            <a
+              aria-label="Instagram"
+              href="http://www.youtube.com/@Holistically-thc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white shadow hover:bg-pink-50 transition"
+            >
+              <IconBrandYoutube className="h-5 w-5 text-pink-600" />
+            </a>
+
+            {/* Facebook */}
+            <a
+              aria-label="Instagram"
+              href="https://www.facebook.com/111868581881752?ref=_xav_ig_profile_page_web"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white shadow hover:bg-pink-50 transition"
+            >
+              <IconBrandFacebook className="h-5 w-5 text-pink-600" />
             </a>
           </div>
         </div>

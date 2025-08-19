@@ -19,6 +19,13 @@ const slides = [
   { src: "/promo/13.jpeg", alt: "Struggling with Lichen Planus" },
   { src: "/promo/14.jpeg", alt: "Bad body odour" },
   { src: "/promo/15.jpeg", alt: "Child sleep" },
+  { src: "/promo/16.jpeg", alt: "PCOS Treatment" },
+  { src: "/promo/17.jpeg", alt: "Asthama Treatment" },
+  { src: "/promo/18.jpeg", alt: "Vericose Vein Treatment" },
+  { src: "/promo/19.jpeg", alt: "Myasthenia Gravis" },
+  { src: "/promo/20.jpeg", alt: "Eczema" },
+  { src: "/promo/21.jpeg", alt: "Asthma" },
+  { src: "/promo/22.jpeg", alt: "Myasthenia Gravis" },
 ];
 
 export default function PromoGallery() {

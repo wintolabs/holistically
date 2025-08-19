@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import PromoGallery from "@/components/PromoGallery";
 import YoutubeVideoCarousel from "@/components/YoutubeVideoCarousel";
 import { LatestBlogs } from "@/components/LatestBlogs";
+import TestimonialsStories from "@/components/InstaStory";
 
 export default async function Home() {
   return (
@@ -14,6 +15,7 @@ export default async function Home() {
       <YoutubeVideoCarousel />
       <PromoGallery />
       <LatestBlogs />
+      <TestimonialsStories />
       <Services />
       <Footer />
     </>
