@@ -3,6 +3,7 @@
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { PopupModal } from "react-calendly";
+import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 
 export default function CalendlyPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,13 +18,37 @@ export default function CalendlyPopup() {
 
   if (!rootElement) return null;
 
+  const words = [
+    {
+      text: "Book",
+      className: "text-white",
+    },
+    {
+      text: "Your",
+      className: "text-white",
+    },
+    {
+      text: "First",
+      className: "text-white",
+    },
+    {
+      text: "Free",
+      className: "text-white",
+    },
+    {
+      text: "Call",
+      className: "text-white",
+    },
+  ];
+
   return (
     <>
       <button
         onClick={handleOpen}
         className="group relative flex items-center justify-between gap-2 overflow-hidden rounded-full bg-pink-500 px-4 py-2 font-bold text-white shadow-xl transition-all duration-300 ease-in-out hover:from-pink-600 hover:to-pink-700"
       >
-        <span className="z-10">Book a call</span>
+        <TypewriterEffectSmooth words={words} />
+        {/* <span className="z-10">Book a call</span> */}
 
         {/* Animated white circle with arrow */}
         <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-white text-pink-500 transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-105">
