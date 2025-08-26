@@ -142,13 +142,7 @@ export default function TestimonialsStories() {
   };
 
   return (
-    <section
-      className="py-12 md:py-20"
-      style={{
-        background:
-          "linear-gradient(120deg, #fbe5ee 0%, #fff 60%, #d3f0f4 100%)",
-      }}
-    >
+    <section className="py-12 md:py-20 bg-gradient-to-br from-[#d3f0f4] via-white to-[#fbe5ee]">
       {/* Header */}
       <div className="max-w-4xl mx-auto text-center mb-8 px-4">
         <h2 className="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-500 to-sky-400 bg-clip-text text-transparent mb-4">
