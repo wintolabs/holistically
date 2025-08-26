@@ -44,7 +44,7 @@ export function Header() {
 
           <NavItems items={navItems} />
 
-          <div className="flex items-center gap-4">
+          <div className="relative w-[270px] ml-auto flex-shrink-0 overflow-hidden">
             <CalendlyPopup />
           </div>
         </NavBody>
