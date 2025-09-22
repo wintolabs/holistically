@@ -84,6 +84,7 @@ function PromoCard({
 
 export default function PromoMarqueeVertical() {
   const [selected, setSelected] = useState<string | null>(null);
+  const [imageLoading, setImageLoading] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -100,7 +101,20 @@ export default function PromoMarqueeVertical() {
     };
   }, [selected]);
 
-  // Pause marquee when modal is open
+  const handleImageClick = (src: string) => {
+    setSelected(src);
+    setImageLoading(true); // Start loading state
+  };
+
+  const handleImageLoad = () => {
+    setImageLoading(false); // End loading state
+  };
+
+  const closeModal = () => {
+    setSelected(null);
+    setImageLoading(false);
+  };
+
   const isModalOpen = !!selected;
 
   return (
@@ -125,18 +139,16 @@ export default function PromoMarqueeVertical() {
                   <PromoCard
                     src={s.src}
                     alt={s.alt}
-                    onClick={() => setSelected(s.src)}
+                    onClick={() => handleImageClick(s.src)}
                   />
                 </div>
               ))}
             </Marquee>
-
-            {/* Fade masks */}
             <div className="pointer-events-none absolute inset-x-0 top-0 h-5 bg-gradient-to-b from-[#d3f0f4] via-[#d3f0f4]/80 to-transparent" />
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-5 bg-gradient-to-t from-[#fbe5ee] via-[#fbe5ee]/80 to-transparent" />
           </div>
 
-          {/* Right column (reverse) */}
+          {/* Right column */}
           <div className="relative h-[600px] w-48 overflow-hidden rounded-2xl bg-white/30 backdrop-blur-sm">
             <Marquee
               vertical={true}
@@ -151,71 +163,83 @@ export default function PromoMarqueeVertical() {
                   <PromoCard
                     src={s.src}
                     alt={s.alt}
-                    onClick={() => setSelected(s.src)}
+                    onClick={() => handleImageClick(s.src)}
                   />
                 </div>
               ))}
             </Marquee>
-
-            {/* Fade masks */}
             <div className="pointer-events-none absolute inset-x-0 top-0 h-5 bg-gradient-to-b from-[#d3f0f4] via-[#d3f0f4]/80 to-transparent" />
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-5 bg-gradient-to-t from-[#fbe5ee] via-[#fbe5ee]/80 to-transparent" />
           </div>
         </div>
 
-        {/* Enhanced styles for pausing animation when modal is open */}
         <style jsx global>{`
-          /* Pause marquee when modal is open */
           .paused,
           .paused * {
             animation-play-state: paused !important;
-            -webkit-animation-play-state: paused !important;
-            -moz-animation-play-state: paused !important;
           }
 
-          /* Accessibility support for reduced motion */
           @media (prefers-reduced-motion: reduce) {
             .marquee,
             [class*="Marquee"],
             [class*="marquee"] {
               animation-play-state: paused !important;
-              -webkit-animation-play-state: paused !important;
-              -moz-animation-play-state: paused !important;
             }
           }
         `}</style>
       </div>
 
-      {/* Modal via portal */}
+      {/* Enhanced Modal with Loading States */}
       {mounted &&
         selected &&
         createPortal(
           <div
             className="fixed inset-0 z-[9999] bg-black/80 backdrop-blur-sm p-4 flex items-center justify-center"
-            onClick={() => setSelected(null)}
+            onClick={closeModal}
             role="dialog"
             aria-modal="true"
             aria-label="Full size promo image"
           >
             <div
-              className="relative max-w-3xl max-h-[90vh]"
+              className="relative max-w-3xl max-h-[90vh] bg-white rounded-xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
+              {/* Loading Skeleton */}
+              {imageLoading && (
+                <div className="absolute inset-0 flex items-center justify-center bg-white">
+                  <div className="w-full h-full max-w-2xl max-h-[80vh] bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200 animate-pulse rounded-xl flex flex-col items-center justify-center">
+                    {/* Skeleton with loading spinner */}
+                    <div className="w-16 h-16 border-4 border-pink-200 border-t-pink-500 rounded-full animate-spin mb-4"></div>
+                    <p className="text-gray-500 text-lg font-medium">
+                      Loading image...
+                    </p>
+                  </div>
+                </div>
+              )}
+
+              {/* Actual Image */}
               <Image
                 src={selected}
                 alt="Promo"
                 width={800}
                 height={1067}
-                className="h-auto w-full rounded-xl object-contain shadow-2xl"
+                className={`h-auto w-full object-contain transition-opacity duration-300 ${
+                  imageLoading ? "opacity-0" : "opacity-100"
+                }`}
+                onLoad={handleImageLoad}
                 priority={true}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
               />
+
+              {/* Close Button - Always Visible */}
               <button
-                onClick={() => setSelected(null)}
-                className="absolute right-3 top-3 rounded-full bg-white/90 p-2 shadow-lg hover:bg-white transition-colors"
+                onClick={closeModal}
+                className="absolute right-3 top-3 rounded-full bg-white/90 p-3 shadow-lg hover:bg-white transition-colors z-10"
                 aria-label="Close modal"
               >
                 <svg
-                  className="w-5 h-5 text-gray-700"
+                  className="w-6 h-6 text-gray-700"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
