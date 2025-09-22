@@ -13,7 +13,7 @@ export default function Hero() {
     >
       {/* Background image */}
       <Image
-        src="/hero.png"
+        src="/hero.jpeg"
         alt="Holistically Homeopathic care"
         fill
         priority
@@ -32,7 +32,7 @@ export default function Hero() {
         className="relative z-10 max-w-3xl px-6 py-32 sm:px-8 md:px-16 text-left"
       >
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight text-white drop-shadow">
-          Wellness through <span className="text-pink-400">homeopathy</span>
+          Wellness through <span className="text-pink-500">homeopathy</span>
         </h1>
 
         <p className="mt-4 max-w-xl text-base sm:text-lg md:text-xl text-white/90">
@@ -40,18 +40,27 @@ export default function Hero() {
           — guided by Dr.&nbsp;Priyanka Sharma
         </p>
 
-        <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+        <div className="mt-8 space-y-4 sm:space-y-0 sm:flex sm:gap-4 sm:justify-center lg:justify-start">
           <Link
             href="#services"
-            className="inline-block rounded-md bg-cyan-600 px-8 py-3 text-center text-white font-medium shadow-md transition hover:bg-white hover:text-cyan-700"
+            className="block w-full sm:w-auto group relative overflow-hidden rounded-full bg-gradient-to-r from-pink-500 to-pink-600 px-8 py-4 text-center text-lg font-bold text-white shadow-xl transition-all duration-300 hover:from-pink-600 hover:to-pink-700 hover:shadow-2xl hover:scale-105"
+            role="button"
+            aria-label="Browse our comprehensive homeopathy services"
           >
-            Explore Services
+            <span className="relative z-10 inline-flex items-center justify-center">
+              Explore Services
+            </span>
           </Link>
+
           <Link
             href="#about"
-            className="inline-block rounded-md bg-white/90 px-8 py-3 text-center text-pink-600 font-medium shadow-md backdrop-blur transition hover:bg-pink-600 hover:text-white"
+            className="block w-full sm:w-auto group relative rounded-full bg-white px-8 py-4 text-center text-lg font-semibold text-pink-600 transition-all duration-300 hover:bg-pink-50 hover:text-pink-700 hover:shadow-lg hover:scale-105"
+            role="button"
+            aria-label="Learn about our holistic treatment philosophy"
           >
-            Why Holistically?
+            <span className="inline-flex items-center justify-center">
+              Why Holistically?
+            </span>
           </Link>
         </div>
       </motion.div>
